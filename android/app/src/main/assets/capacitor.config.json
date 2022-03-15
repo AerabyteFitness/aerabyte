@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "aerabyte",
+	"webDir": "build",
+	"bundledWebRuntime": false
+}
