@@ -1,0 +1,11 @@
+.Header {
+    padding: 25px;
+    text-align: center;
+  }
+
+  .Header p {
+    font-size: 35px;
+    line-height: 25px;
+    color: black;
+    margin: 20;
+  }

@@ -1,0 +1,18 @@
+import { useState, useEffect } from 'react';
+import { isPlatform } from '@ionic/react';
+
+import { Filesystem, Directory } from '@capacitor/filesystem';
+import { Storage } from '@capacitor/storage';
+import { Capacitor } from '@capacitor/core';
+
+
+
+export function SaveInfo() {
+    const SaveInfo = async () => {
+      
+    };
+  
+    return {
+        SaveInfo,
+    };
+  }
