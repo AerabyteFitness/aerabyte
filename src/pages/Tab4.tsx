@@ -5,7 +5,9 @@ import { saveAs } from 'file-saver';
 import { useState, useEffect,useRef  } from "react";
 import ExploreContainer from '../components/ExploreContainer';
 import './Tab4.css';
-
+import React from 'react';
+import { IonBackButton, IonMenuButton, IonSearchbar, IonSegment, IonSegmentButton } from '@ionic/react';
+import { personCircle, search, helpCircle, star, create, ellipsisHorizontal, ellipsisVertical } from 'ionicons/icons';
 import {
   IonButtons,
   IonDatetime,
@@ -32,13 +34,16 @@ export const Tab4: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-      <IonToolbar color='primary'>
-         <IonTitle >Setting</IonTitle>
-        </IonToolbar>
+          <IonToolbar>
+        <IonButtons slot="secondary">
+          <IonButton>
+            <IonIcon slot="icon-only" icon={personCircle} />
+          </IonButton>
+        </IonButtons>
+        <IonTitle>Your Info</IonTitle>
+      </IonToolbar>
       </IonHeader>
-      <div className='Header'>
-        <p>Your personal Info</p>
-      </div>
+
       <IonContent >
       
         <IonList>
@@ -57,11 +62,9 @@ export const Tab4: React.FC = () => {
           </IonItem>
 
         </IonList>
-        <IonDatetime size="cover"presentation="date" value={selectedDate} onIonChange={e => setSelectedDate(e.detail.value!)}>
-        <div slot="title">Please select your birthday</div>
-        <IonButtons slot="buttons">
-        </IonButtons>
-        </IonDatetime>
+        <IonDatetime presentation="date"></IonDatetime>
+        <IonButton expand="block">Confirm</IonButton>
+
       </IonContent>
     </IonPage>
     

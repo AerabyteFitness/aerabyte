@@ -4,8 +4,10 @@ import './Tab1.css';
 import { saveAs } from 'file-saver';
 import { useState, useEffect } from "react";
 import { Storage } from '@capacitor/storage';
-
-
+import React from 'react';
+import { IonMenu, IonList, IonItem, IonRouterOutlet } from '@ionic/react';
+import { IonButtons, IonBackButton, IonButton, IonIcon, IonMenuButton, IonSearchbar, IonSegment, IonSegmentButton } from '@ionic/react';
+import { personCircle, search, helpCircle, star, create, ellipsisHorizontal, ellipsisVertical } from 'ionicons/icons';
 const Tab1: React.FC = () => {
   const [output, setoutput] = useState("");
   const [score, setscore] = useState(0);
@@ -54,11 +56,15 @@ const Tab1: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar>
-          <IonTitle>Setting</IonTitle>
-        </IonToolbar>
+      <IonToolbar>
+    <IonButtons slot="start">
+      <IonMenuButton autoHide={false} />
+    </IonButtons>
+    <IonTitle>Your Aerabyte</IonTitle>
+  </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
+
         <IonHeader collapse="condense">
           <IonToolbar>
             <IonTitle size="large">Tab 4</IonTitle>
