@@ -15,26 +15,23 @@ import {
   IonPopover
 } from '@ionic/react';
 import { format, parseISO } from 'date-fns';
+
+
+
 export const Tab4: React.FC = () => {
-
-
   const [text, setText] = useState<string>();
+  const [weight, setWeight] = useState<number>();
   const [number, setNumber] = useState<number>();
-
-
-
-  const [selectedDate, setSelectedDate] = useState('2012-12-15T13:47:20.789');
-
-  const dateFromIonDatetime = '2021-06-04T14:23:00-04:00';
-  const formattedString = format(parseISO(dateFromIonDatetime), 'MMM d, yyyy');
+  const [age, setAge] = useState<number>();
   
-  console.log(formattedString); // Jun 4, 2021
-
 
   return (
     <IonPage>
       <IonHeader>
           <IonToolbar>
+        <IonButtons slot="start">
+          <IonBackButton defaultHref="/" />
+        </IonButtons>
         <IonButtons slot="secondary">
           <IonButton>
             <IonIcon slot="icon-only" icon={personCircle} />
@@ -51,25 +48,26 @@ export const Tab4: React.FC = () => {
           <IonItem>
             <IonInput value={text} placeholder="Name" onIonChange={e => setText(e.detail.value!)} clearInput></IonInput>
           </IonItem>
-
-          <IonItemDivider>Your Weight(KG)</IonItemDivider>
+          <IonItemDivider>Your Height</IonItemDivider>
           <IonItem>
-            <IonInput type="number" value={number} placeholder="Enter Weight"></IonInput>
+            <IonInput type="number" value={number}   id="number"  onIonChange={ (e) => setNumber( parseInt(e.detail.value!) ) } placeholder="Enter Height"></IonInput>
           </IonItem>
-          <IonItemDivider>Your Height(CM)</IonItemDivider>
+          <IonItemDivider>Your Weight</IonItemDivider>
           <IonItem>
-            <IonInput type="number" value={number} placeholder="Enter Height"></IonInput>
+            <IonInput type="number" value={weight}   id="number"  onIonChange={ (e) => setWeight( parseInt(e.detail.value!) ) } placeholder="Enter Weight(KG)"></IonInput>
           </IonItem>
-
+          <IonItemDivider>Your Age</IonItemDivider>
+          <IonItem>
+            <IonInput type="number" value={age}   id="number"  onIonChange={ (e) => setAge( parseInt(e.detail.value!) ) } placeholder="Your Age"></IonInput>
+          </IonItem>
         </IonList>
-        <IonDatetime presentation="date"></IonDatetime>
-        <IonButton expand="block">Confirm</IonButton>
-
+        {/*-- <IonDatetime presentation="date"></IonDatetime>
+          --*/}
       </IonContent>
     </IonPage>
     
   );
-
+  const text_public = text;
 };
 
 export default Tab4;
