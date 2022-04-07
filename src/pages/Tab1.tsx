@@ -51,49 +51,49 @@ const Tab1: React.FC = () => {
    
       let currentValue = allData[i]["value"];
       if(age < 25 && age >= 20){
-        b_scord = currentValue/(aerabytenum- 20);
+        b_scord = currentValue/(aerabytenum- age);
       }
       if(age < 30 && age >= 25){
-        b_scord = currentValue/(aerabytenum- 25);
+        b_scord = currentValue/(aerabytenum- age);
       }
       if(age < 35 && age >= 30){
-        b_scord = currentValue/(aerabytenum- 30);
+        b_scord = currentValue/(aerabytenum- age);
       }
       if(age < 40 && age >= 35){
-        b_scord = currentValue/(aerabytenum- 35);
+        b_scord = currentValue/(aerabytenum- age);
       }
       if(age < 45 && age >= 40){
-        b_scord = currentValue/(aerabytenum- 40);
+        b_scord = currentValue/(aerabytenum- age);
       }
       if(age < 50 && age >= 45){
-        b_scord = currentValue/(aerabytenum- 45);
+        b_scord = currentValue/(aerabytenum- age);
       }
       if(age < 55 && age >= 50){
-        b_scord = currentValue/(aerabytenum- 50);
+        b_scord = currentValue/(aerabytenum- age);
       }
       if(age < 60 && age >= 55){
-        b_scord = currentValue/(aerabytenum- 55);
+        b_scord = currentValue/(aerabytenum- age);
       }
       if(age < 65 && age >= 60){
-        b_scord = currentValue/(aerabytenum- 60);
+        b_scord = currentValue/(aerabytenum- age);
       }
       if(age < 70 && age >= 65){
-        b_scord = currentValue/(aerabytenum- 65);
+        b_scord = currentValue/(aerabytenum- age);
       }
       if(age < 75 && age >= 70){
-        b_scord = currentValue/(aerabytenum- 70);
+        b_scord = currentValue/(aerabytenum- age);
       }
       if(age < 80 && age >= 75){
-        b_scord = currentValue/(aerabytenum- 75);
+        b_scord = currentValue/(aerabytenum- age);
       }
       if(age < 85 && age >= 80){
-        b_scord = currentValue/(aerabytenum- 80);
+        b_scord = currentValue/(aerabytenum- age);
       }
       if(age < 90 && age >= 85){
-        b_scord = currentValue/(aerabytenum- 85);
+        b_scord = currentValue/(aerabytenum- age);
       }
       if(age >= 90){
-        b_scord = currentValue/(aerabytenum- 90);
+        b_scord = currentValue/(aerabytenum- age);
       }
       if(b_scord < aerabytenum1){
         aerabytetotal = aerabytetotal + 0;
