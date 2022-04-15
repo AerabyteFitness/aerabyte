@@ -35,6 +35,7 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 import kiwi from '../src/img/aerabytelogo.svg';
+import Tabuser from './pages/Tabuser';
 setupIonicReact();
 
 const App: React.FC = () => (
@@ -42,6 +43,7 @@ const App: React.FC = () => (
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
+          {/* when we need to add new pages, add it here */}
           <Route exact path="/tab1">
             <Tab1 />
           </Route>
@@ -54,11 +56,15 @@ const App: React.FC = () => (
           <Route exact path="/tab4">
             <Tab4 />
           </Route>
+          <Route exact path="/tabuser">
+            <Tabuser />
+          </Route>
           <Route exact path="/">
             <Redirect to="/tab1" />
           </Route>
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
+          {/* when we want pages show up inthe tab bar , do it here */}
           <IonTabButton tab="tab1" href="/tab1">
             <IonIcon src={kiwi}/>
             <IonLabel>Home</IonLabel>

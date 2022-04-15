@@ -15,7 +15,6 @@ import Tab4 from "./Tab4"
 
 const Tab2: React.FC = () => {
   
-  console.log(Tab4);
   return (  
     
     <IonPage>

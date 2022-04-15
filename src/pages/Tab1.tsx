@@ -13,6 +13,10 @@ const Tab1: React.FC = () => {
   const [output, setoutput] = useState("");
   const [outputdata, setoutputdata] = useState("");
   const [score, setscore] = useState(0);
+
+  const [displayScore, setDisplayScore] = useState(0);
+
+
   var FileSaver = require('file-saver');
   var  b_scord = 0;
   var  age = 22;
@@ -28,10 +32,11 @@ const Tab1: React.FC = () => {
   var  aerabytenum9 = 0.95;
   var  aerabytenum10 = 1;
   var  aerabytetotal = 0;
+
   const get_html =()=>{
     const myArr = [];
     const access_token = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMzg4WDIiLCJzdWIiOiI5V0pWVk4iLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJ3aHIgd251dCB3cHJvIHdzbGUgd3dlaSB3c29jIHdhY3Qgd3NldCB3bG9jIiwiZXhwIjoxNjc4NTkxNDA0LCJpYXQiOjE2NDcwNTU0MDR9._JrdjrgkVdce1KifTNpm4IBuGemERh2ArXYnDFIPiRo"
-    fetch("https://api.fitbit.com/1/user/-/activities/heart/date/2022-03-12/1d/1min.json",{
+    fetch("https://api.fitbit.com/1/user/-/activities/heart/date/2022-04-10/1d/1min.json",{
       method:"GET",
       headers:{"Authorization":"Bearer " + access_token}
   })
@@ -50,51 +55,8 @@ const Tab1: React.FC = () => {
 
    
       let currentValue = allData[i]["value"];
-      if(age < 25 && age >= 20){
         b_scord = currentValue/(aerabytenum- age);
-      }
-      if(age < 30 && age >= 25){
-        b_scord = currentValue/(aerabytenum- age);
-      }
-      if(age < 35 && age >= 30){
-        b_scord = currentValue/(aerabytenum- age);
-      }
-      if(age < 40 && age >= 35){
-        b_scord = currentValue/(aerabytenum- age);
-      }
-      if(age < 45 && age >= 40){
-        b_scord = currentValue/(aerabytenum- age);
-      }
-      if(age < 50 && age >= 45){
-        b_scord = currentValue/(aerabytenum- age);
-      }
-      if(age < 55 && age >= 50){
-        b_scord = currentValue/(aerabytenum- age);
-      }
-      if(age < 60 && age >= 55){
-        b_scord = currentValue/(aerabytenum- age);
-      }
-      if(age < 65 && age >= 60){
-        b_scord = currentValue/(aerabytenum- age);
-      }
-      if(age < 70 && age >= 65){
-        b_scord = currentValue/(aerabytenum- age);
-      }
-      if(age < 75 && age >= 70){
-        b_scord = currentValue/(aerabytenum- age);
-      }
-      if(age < 80 && age >= 75){
-        b_scord = currentValue/(aerabytenum- age);
-      }
-      if(age < 85 && age >= 80){
-        b_scord = currentValue/(aerabytenum- age);
-      }
-      if(age < 90 && age >= 85){
-        b_scord = currentValue/(aerabytenum- age);
-      }
-      if(age >= 90){
-        b_scord = currentValue/(aerabytenum- age);
-      }
+      
       if(b_scord < aerabytenum1){
         aerabytetotal = aerabytetotal + 0;
       }
@@ -132,7 +94,9 @@ const Tab1: React.FC = () => {
 
 
       
-      console.log(aerabytetotal);
+      console.log(allData[i]["value"]);
+      //console.log(aerabytetotal);
+      setDisplayScore(aerabytetotal);
     }
     
     
@@ -159,7 +123,7 @@ const Tab1: React.FC = () => {
             <IonTitle size="large">Tab 4</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <p>{output}</p>
+        {/* <p>{output}</p> */}
         <IonButton expand="block" onClick={()=> 
             get_html()
           }>
@@ -167,7 +131,7 @@ const Tab1: React.FC = () => {
         </IonButton>
         <IonItem>
           <IonLabel>Your Aerabyte for the Day</IonLabel>
-          <IonBadge slot="end">{b_scord}</IonBadge>
+          <IonBadge slot="end">{displayScore}</IonBadge>
         </IonItem>
       </IonContent>
     </IonPage>

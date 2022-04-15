@@ -15,17 +15,26 @@ import {
   IonPopover
 } from '@ionic/react';
 import { format, parseISO } from 'date-fns';
+import { link } from 'fs';
+import Tabuser from './Tabuser';
+import { useHistory } from "react-router-dom";
 
-
-
+//this is user input for personal data
 export const Tab4: React.FC = () => {
   const [text, setText] = useState<string>();
   const [weight, setWeight] = useState<number>();
   const [number, setNumber] = useState<number>();
   const [age, setAge] = useState<number>();
+
+// this is to handle the userlogo button to redirect to login/logout page
+  const history = useHistory();
+  const handleLoginButtonPress = () => {
+    history.push("/Tabuser");
+  };
   
 
   return (
+    
     <IonPage>
       <IonHeader>
           <IonToolbar>
@@ -33,8 +42,8 @@ export const Tab4: React.FC = () => {
           <IonBackButton defaultHref="/" />
         </IonButtons>
         <IonButtons slot="secondary">
-          <IonButton>
-            <IonIcon slot="icon-only" icon={personCircle} />
+          <IonButton onClick={handleLoginButtonPress}>
+            <IonIcon  slot="icon-only" icon={personCircle} />
           </IonButton>
         </IonButtons>
         <IonTitle>Your Info</IonTitle>
@@ -42,7 +51,6 @@ export const Tab4: React.FC = () => {
       </IonHeader>
 
       <IonContent >
-      
         <IonList>
           <IonItemDivider>Please Enter your name</IonItemDivider>
           <IonItem>
@@ -61,13 +69,12 @@ export const Tab4: React.FC = () => {
             <IonInput type="number" value={age}   id="number"  onIonChange={ (e) => setAge( parseInt(e.detail.value!) ) } placeholder="Your Age"></IonInput>
           </IonItem>
         </IonList>
-        {/*-- <IonDatetime presentation="date"></IonDatetime>
-          --*/}
+
+
       </IonContent>
     </IonPage>
     
   );
-  const text_public = text;
 };
 
 export default Tab4;
