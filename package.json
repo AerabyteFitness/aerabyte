@@ -27,7 +27,7 @@
     "@types/react-router-dom": "^5.1.7",
     "@types/react-sidebar": "^3.0.2",
     "file-saver": "^2.0.5",
-    "firebase": "^9.6.10",
+    "firebase": "^9.6.11",
     "ion-datepicker": "^2.8.2",
     "ionicons": "^5.4.0",
     "react": "^17.0.2",
