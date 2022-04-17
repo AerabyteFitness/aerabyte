@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar} from '@ionic/react';
+import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar} from '@ionic/react';
 import React, { useState } from 'react';
 import './Tab2.css';
 import {IonButtons, IonBackButton, IonIcon, IonMenuButton, IonSearchbar, IonSegment, IonSegmentButton } from '@ionic/react';
@@ -25,7 +25,8 @@ const Tabuser: React.FC = () => {
         </IonHeader>
 
      <IonContent>
-
+     <IonButton routerLink="/login" color='primary'>Login</IonButton>
+      <IonButton routerLink="/register" color='secondary'>Register</IonButton>
     </IonContent>
   </IonPage>
 

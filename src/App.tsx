@@ -15,7 +15,9 @@ import Tab1 from './pages/Tab1';
 import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
 import Tab4 from './pages/Tab4';
-
+import Home from './pages/Tabuser';
+import Login from './pages/Login';
+import Register from './pages/Register';
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
 
@@ -36,6 +38,8 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 import kiwi from '../src/img/aerabytelogo.svg';
 import Tabuser from './pages/Tabuser';
+
+
 setupIonicReact();
 
 const App: React.FC = () => (
@@ -58,6 +62,12 @@ const App: React.FC = () => (
           </Route>
           <Route exact path="/tabuser">
             <Tabuser />
+          </Route>
+          <Route exact path="/login">
+            <Login />
+          </Route>
+          <Route exact path="/register">
+            <Register />
           </Route>
           <Route exact path="/">
             <Redirect to="/tab1" />
