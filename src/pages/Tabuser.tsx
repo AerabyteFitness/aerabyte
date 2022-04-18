@@ -20,11 +20,11 @@ const Tabuser: React.FC = () => {
           </IonButtons>
           <IonButtons slot="secondary">
           </IonButtons>
-          <IonTitle>User Info</IonTitle>
+          <IonTitle>Account</IonTitle>
         </IonToolbar>
         </IonHeader>
 
-     <IonContent>
+     <IonContent className='ion-padding'>
      <IonButton routerLink="/login" color='primary'>Login</IonButton>
       <IonButton routerLink="/register" color='secondary'>Register</IonButton>
     </IonContent>

@@ -30,8 +30,9 @@ import {
   IonSegment,
   IonSegmentButton,
 } from "@ionic/react";
-import { syncSharp, bicycleOutline } from "ionicons/icons";
+import { syncSharp, bicycleOutline, personCircle, walk, walkOutline } from "ionicons/icons";
 import { IonBadge, IonLabel } from "@ionic/react";
+import { useHistory } from "react-router-dom";
 
 const Tab1: React.FC = () => {
   const [output, setoutput] = useState("");
@@ -57,12 +58,19 @@ const Tab1: React.FC = () => {
   var aerabyteRatioMax = 1;
   var aerabyteTotal = 0;
 
+  // this is to handle the userlogo button to redirect to login/logout page
+  const history = useHistory();
+  const handleLoginButtonPress = () => {
+    history.push("/Tabuser");
+  };
+
+  //Code below is related to connecting to FitBit and getting data from it
   const get_html = () => {
     const myArr = [];
     const access_token =
       "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMzg4WDIiLCJzdWIiOiI5V0pWVk4iLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJ3aHIgd251dCB3cHJvIHdzbGUgd3dlaSB3c29jIHdhY3Qgd3NldCB3bG9jIiwiZXhwIjoxNjc4NTkxNDA0LCJpYXQiOjE2NDcwNTU0MDR9._JrdjrgkVdce1KifTNpm4IBuGemERh2ArXYnDFIPiRo";
     fetch(
-      "https://api.fitbit.com/1/user/-/activities/heart/date/2022-04-11/1d/1min.json",
+      "https://api.fitbit.com/1/user/-/activities/heart/date/2022-04-13/1d/1min.json",
       {
         method: "GET",
         headers: { Authorization: "Bearer " + access_token },
@@ -163,33 +171,37 @@ const Tab1: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar color="primary">
-          <IonButtons slot="start">
-            <IonMenuButton autoHide={false} />
+          <IonButtons slot="start"></IonButtons>
+          <IonButtons slot="secondary">  
+            <IonButton onClick={handleLoginButtonPress}>
+              <IonIcon slot="icon-only" icon={personCircle} />
+            </IonButton>
           </IonButtons>
-          <IonTitle>Your Aerabyte Points</IonTitle>
+
+          <IonTitle>Home</IonTitle>
         </IonToolbar>
       </IonHeader>
 
-      <IonContent className="ion-padding">
+      <IonContent className="ion-padding" fullscreen>
         <IonGrid>
           <IonCol>
             <IonItem>
               <IonCard>
                 <IonCardHeader>
-                  <IonCardTitle>Aerabyte Points</IonCardTitle>
+                  <IonCardTitle>Aerabyte Points <IonIcon slot="start" size="large" icon={bicycleOutline} /> </IonCardTitle>
                 </IonCardHeader>
                 <IonCardContent>
-                  <h1>Your Aerabyte Points Today {displayScore}</h1>
+                  <h1> Aerabyte Points Scored Today {displayScore}</h1>
                 </IonCardContent>
               </IonCard>
             </IonItem>
           </IonCol>
           <IonCol className="ion-text-center">
-          <IonButton onClick={() => get_html()}>
-            <IonIcon slot="start" icon={bicycleOutline} />
-          Click to get Aerabyte
-        </IonButton>
-        </IonCol>
+            <IonButton onClick={() => get_html()}>
+              <IonIcon slot="start" icon={walkOutline} />
+              Click to get Aerabyte
+            </IonButton>
+          </IonCol>
         </IonGrid>
       </IonContent>
 
