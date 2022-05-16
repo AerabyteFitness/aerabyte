@@ -5,13 +5,13 @@ import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 
 const config = {
-    apiKey: "AIzaSyBEJBINXW0RYSnCKLgBwz5QITeGknETxwE",
-  authDomain: "login-3e6e7.firebaseapp.com",
-  projectId: "login-3e6e7",
-  storageBucket: "login-3e6e7.appspot.com",
-  messagingSenderId: "1087913910735",
-  appId: "1:1087913910735:web:86ea9f8a84970f755532ba",
-  measurementId: "G-2C0E70BESM"
+    apiKey: "AIzaSyDylh2b9eLFndfKlFSuuPmj3hZMZ59gsCY",
+  authDomain: "aerabytefitness-84768.firebaseapp.com",
+  projectId: "aerabytefitness-84768",
+  storageBucket: "aerabytefitness-84768.appspot.com",
+  messagingSenderId: "486964549335",
+  appId: "1:486964549335:web:922faec756dc3089f9c292",
+  measurementId: "G-0VEJDTX55F"
 };
 
 firebase.initializeApp(config)
